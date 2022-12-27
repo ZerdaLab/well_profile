@@ -236,8 +236,8 @@ def include_logo(fig, dark=None, plot_type='3D', color=None):
         if plot_type != '3D':
             y = 1.03
         fig.update_layout(images=[dict(
-                          source="https://raw.githubusercontent.com/jcamiloangarita/opensource_apps/master/"
-                                 "resources/pwp-logo-dark.png",
+                        #   source="https://raw.githubusercontent.com/jcamiloangarita/opensource_apps/master/"
+                                #  "resources/pwp-logo-dark.png",
                           xref="paper", yref="paper",
                           x=0.5, y=y,
                           sizex=0.12, sizey=0.12,
@@ -246,7 +246,7 @@ def include_logo(fig, dark=None, plot_type='3D', color=None):
         if plot_type != '3D':
             y = 0.99
         fig.update_layout(images=[dict(
-                          source="https://avatars.githubusercontent.com/u/53001276?v=4",
+                        #   source="https://avatars.githubusercontent.com/u/53001276?v=4",
                           xref="paper", yref="paper",
                           x=0.35, y=y,
                           sizex=0.2, sizey=0.2,
