@@ -11,7 +11,7 @@ nums = np.linspace(1000, 1100, num=100).round(decimals=0)
 
 
 well = wp.load('trajectory.xlsx', inner_points=1)   # loading file with only original survey points
-well.plot(style={'darkMode': True,'color': 'dls'}).show()
+# well.plot(style={'darkMode': True,'color': 'dls'}).show()
 
 
 def func(list_):
@@ -19,10 +19,9 @@ def func(list_):
     for i in (list_):
         dict = well.get_point(i)
         ls.append(dict)
-    # print(ls)
-
-
     df = pd.DataFrame(ls)
-    print(df)
+    df.to_csv('survey.csv')
+    # return df
 
-# func(nums)
+
+func(nums)
