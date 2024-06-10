@@ -6,6 +6,7 @@ from numpy import linspace
 
 
 def load(data, **kwargs):
+    print("LOADED")
     """
     Load an existing wellpath.
 
