@@ -41,6 +41,10 @@ def load(data, **kwargs):
 
     info = {'dlsResolution': 30, 'wellType': 'offshore', 'units': 'metric'}
 
+    # Update info with set_info if it's not None
+    if set_info is not None:
+        info.update(set_info)
+
     initial_point = {'north': 0, 'east': 0}
 
     base_data = False
