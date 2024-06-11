@@ -39,7 +39,7 @@ def load(data, **kwargs):
     set_info = kwargs.get('set_info', None)
     inner_pts = kwargs.get('inner_points', 0)
 
-    info = {'dlsResolution': 30, 'wellType': 'offshore', 'units': 'metric'}
+    info = {'dlsResolution': 100, 'wellType': 'offshore', 'units': 'metric'}
 
     # Update info with set_info if it's not None
     if set_info is not None:
