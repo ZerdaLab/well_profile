@@ -52,9 +52,13 @@ def get(mdt, profile='V', build_angle=1, kop=0, eob=0, sod=0, eod=0, kop2=0, eob
         params[key] = value
     set_start = params['set_start']
     change_azimuth = params['change_azimuth']
-    set_info = params['set_info']
+    set_info = params['set_info', None]
 
     info = {'dlsResolution': 30, 'wellType': 'offshore', 'units': 'metric'}
+
+    # Update info with set_info if it's not None
+    if set_info is not None:
+        info.update(set_info)
 
     initial_point = {'north': 0, 'east': 0, 'depth': 0}
 
@@ -111,7 +115,13 @@ def get(mdt, profile='V', build_angle=1, kop=0, eob=0, sod=0, eod=0, kop2=0, eob
             point['sectionType'] = define_section(point, trajectory[-1])
             trajectory.append(point)
 
-    return Well({'trajectory': trajectory, 'info': info})
+    well =  Well({'trajectory': trajectory, 'info': info})
+        
+    if set_info is not None:
+        well.info.update(set_info)
+     
+    return well
+
 
 
 def vertical_section(profile, md, kop, depth_step):
