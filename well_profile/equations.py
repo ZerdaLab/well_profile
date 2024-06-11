@@ -102,7 +102,7 @@ def calc_rf(dogleg):
     return rf
 
 
-def calc_dls(point, delta_md, resolution=30):
+def calc_dls(point, delta_md, resolution):
     """
     Calculate dogleg severity with a defined resolution
     :param point: trajectory point
