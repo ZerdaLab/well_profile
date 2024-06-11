@@ -5,7 +5,7 @@ from .well import Well, define_section
 from numpy import linspace
 
 
-def load(data, **kwargs):
+def load(data, dlsResolution, **kwargs):
     """
     Load an existing wellpath.
 
@@ -39,7 +39,7 @@ def load(data, **kwargs):
     set_info = kwargs.get('set_info', None)
     inner_pts = kwargs.get('inner_points', 0)
 
-    info = {'dlsResolution': 100, 'wellType': 'offshore', 'units': 'metric'}
+    info = {'dlsResolution': dlsResolution, 'wellType': 'offshore', 'units': 'metric'}
 
     # Update info with set_info if it's not None
     if set_info is not None:
