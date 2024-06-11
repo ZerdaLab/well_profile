@@ -158,12 +158,18 @@ def load(data, **kwargs):
                         trajectory.append(inner_point)
                     point['dl'] = dl_unit
             trajectory.append(point)
+    
     well = Well({'trajectory': trajectory, 'info': info})
-
+    # Update the info attribute of the Well object with the set_info dictionary
+    
+    if set_info is not None:
+        well.info.update(set_info)
+    
     if base_data:
         well._base_data = data_initial
 
     return well
+
 
 
 def solve_key_similarities(data):
